@@ -14,6 +14,7 @@ body {
 header {
     background-color: #333;
     color: #fff;
+    border-bottom: 2px solid #ffd700; /* Added border for emphasis */
     padding: 1rem 0;
     text-align: center;
 }

@@ -29,7 +29,7 @@ function handleSubmit() {
     console.log('Submitted:', value);
     input.value = '';
 
-
+console.log("System initialized");
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Page loaded');
