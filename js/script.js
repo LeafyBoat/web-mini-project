@@ -28,7 +28,7 @@ function handleSubmit() {
     
     console.log('Submitted:', value);
     input.value = '';
-}
+
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
