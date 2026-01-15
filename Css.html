@@ -3,425 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to CSS</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #e07245;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            border-bottom: 2px solid #ffd700;
-            padding: 1rem 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav {
-            background-color: #444;
-            padding: 0.5rem;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 1rem;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            color: #ffd700;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        section {
-            background-color: #58bce4;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 5px;
-            box-shadow: 4px 10px 10px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            font-size: 16px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        thead tr {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #ffffff;
-            text-align: left;
-            font-weight: bold;
-        }
-
-        th,
-        td {
-            padding: 15px 20px;
-        }
-
-        tbody tr {
-            border-bottom: 1px solid #dddddd;
-            transition: all 0.3s ease;
-        }
-
-        tbody tr:nth-of-type(even) {
-            background-color: #58bce4;
-        }
-
-        tbody tr:last-of-type {
-            border-bottom: 2px solid #58bce4;
-        }
-
-        tbody tr:hover {
-            background-color: #e8eaf6;
-            transform: scale(1.01);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        tbody tr:active {
-            transform: scale(0.99);
-        }
-
-        a {
-            color: #667eea;
-            text-decoration: none;
-            position: relative;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            transition: width 0.3s ease;
-        }
-
-        a:hover::after {
-            width: 100%;
-        }
-
-        a:hover {
-            color: #764ba2;
-        }
-
-        a:active {
-            color: #5a67d8;
-            transform: translateY(1px);
-        }
-
-        a:visited {
-            color: #9f7aea;
-        }
-
-        a.button {
-            display: inline-block;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 6px;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        a.button::after {
-            display: none;
-        }
-
-        a.button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-            color: white;
-        }
-
-        .code-example {
-            background-color: #f4f4f4;
-            border-left: 4px solid #667eea;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-
-        .code-example code {
-            font-family: 'Courier New', monospace;
-            color: #333;
-        }
-
-        h2 {
-            color: #333;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #ffd700;
-            padding-bottom: 0.5rem;
-        }
-
-        h3 {
-            color: #444;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        ul {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        .demo-box {
-            background-color: #fff;
-            border: 2px solid #667eea;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 4px;
-            text-align: center;
-        }
-    </style>
+    <title>CSS Systems</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Introduction to CSS</h1>
+    <div class="progress" id="progress"></div>
+    <header class="site-header">
+        <div class="wrap">
+            <div class="brand">
+                <div class="logo">WM</div>
+                <div class="brand-text">
+                    <p>CSS</p>
+                    <div class="title">Design Systems</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="HTML.html">HTML</a>
+                <a href="Css.html">CSS</a>
+                <a href="JS.html">JavaScript</a>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="HTML.html">HTML</a>
-        <a href="Css.html">CSS</a>
-        <a href="JS.html">JavaScript</a>
-    </nav>
-
     <main>
-        <section>
-            <h2>What is CSS?</h2>
-            <p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of HTML documents. While HTML provides the structure and content, CSS controls how that content looks.</p>
-            <p>CSS allows you to control colors, fonts, layouts, spacing, animations, and much more, transforming plain HTML into visually appealing web pages.</p>
-        </section>
-
-        <section>
-            <h2>How to Add CSS</h2>
-            <p>There are three ways to add CSS to your HTML:</p>
-            
-            <h3>1. Inline CSS</h3>
-            <div class="code-example">
-                <code>&lt;p style="color: blue; font-size: 18px;"&gt;This is blue text&lt;/p&gt;</code>
+        <section class="hero panel reveal">
+            <div>
+                <p class="eyebrow">CSS Strategy</p>
+                <h1>Design with tokens, layout with intent.</h1>
+                <p>CSS is where your interface gains clarity and personality. Think in systems: consistent spacing, scale, and reusable patterns.</p>
+                <div style="margin-top: 1.4rem;">
+                    <a class="btn" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN CSS Reference</a>
+                </div>
             </div>
-            
-            <h3>2. Internal CSS</h3>
-            <div class="code-example">
-                <code>
-&lt;head&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;style&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: blue;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 18px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/style&gt;<br>
-&lt;/head&gt;
-                </code>
-            </div>
-            
-            <h3>3. External CSS (Recommended)</h3>
-            <div class="code-example">
-                <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>
-            </div>
-        </section>
-
-        <section>
-            <h2>CSS Syntax</h2>
-            <p>CSS rules consist of a selector and a declaration block:</p>
-            <div class="code-example">
-                <code>
-selector {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;property: value;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;property: value;<br>
+            <div class="card">
+                <span>Design Tokens</span>
+                <h3>Define reusable values</h3>
+                <pre>
+:root {
+  --space: 1.5rem;
+  --radius: 16px;
+  --accent: #f05d3b;
 }
-                </code>
-            </div>
-            <div class="demo-box">
-                <strong>Example:</strong> h1 { color: red; font-size: 24px; }
+                </pre>
             </div>
         </section>
 
-        <section>
-            <h2>Common CSS Properties</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Property</th>
-                        <th>Description</th>
-                        <th>Example</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>color</td>
-                        <td>Text color</td>
-                        <td>color: #333;</td>
-                    </tr>
-                    <tr>
-                        <td>background-color</td>
-                        <td>Background color</td>
-                        <td>background-color: #fff;</td>
-                    </tr>
-                    <tr>
-                        <td>font-size</td>
-                        <td>Size of text</td>
-                        <td>font-size: 16px;</td>
-                    </tr>
-                    <tr>
-                        <td>margin</td>
-                        <td>Outer spacing</td>
-                        <td>margin: 10px;</td>
-                    </tr>
-                    <tr>
-                        <td>padding</td>
-                        <td>Inner spacing</td>
-                        <td>padding: 20px;</td>
-                    </tr>
-                    <tr>
-                        <td>border</td>
-                        <td>Element border</td>
-                        <td>border: 1px solid black;</td>
-                    </tr>
-                    <tr>
-                        <td>display</td>
-                        <td>Display type</td>
-                        <td>display: flex;</td>
-                    </tr>
-                    <tr>
-                        <td>width / height</td>
-                        <td>Element dimensions</td>
-                        <td>width: 100%;</td>
-                    </tr>
-                </tbody>
-            </table>
+        <section class="panel reveal">
+            <p class="eyebrow">Cascade</p>
+            <h3>Specificity in one glance</h3>
+            <pre>
+/* Lowest → Highest */
+button { }
+.button { }
+header .button { }
+#hero .button { }
+            </pre>
+            <p>Keep specificity shallow to make your styles easy to override and maintain.</p>
         </section>
 
-        <section>
-            <h2>CSS Selectors</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Selector Type</th>
-                        <th>Syntax</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Element</td>
-                        <td>p { }</td>
-                        <td>Selects all &lt;p&gt; elements</td>
-                    </tr>
-                    <tr>
-                        <td>Class</td>
-                        <td>.className { }</td>
-                        <td>Selects elements with class="className"</td>
-                    </tr>
-                    <tr>
-                        <td>ID</td>
-                        <td>#idName { }</td>
-                        <td>Selects element with id="idName"</td>
-                    </tr>
-                    <tr>
-                        <td>Universal</td>
-                        <td>* { }</td>
-                        <td>Selects all elements</td>
-                    </tr>
-                    <tr>
-                        <td>Descendant</td>
-                        <td>div p { }</td>
-                        <td>Selects all &lt;p&gt; inside &lt;div&gt;</td>
-                    </tr>
-                    <tr>
-                        <td>Pseudo-class</td>
-                        <td>a:hover { }</td>
-                        <td>Selects links on hover</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section>
-            <h2>The Box Model</h2>
-            <p>Every HTML element is essentially a box consisting of:</p>
-            <ul>
-                <li><strong>Content:</strong> The actual content (text, images, etc.)</li>
-                <li><strong>Padding:</strong> Space between content and border</li>
-                <li><strong>Border:</strong> A line around the padding</li>
-                <li><strong>Margin:</strong> Space outside the border</li>
-            </ul>
-            <div class="code-example">
-                <code>
-div {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;width: 300px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;padding: 20px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;border: 2px solid black;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;margin: 10px;<br>
+        <section class="panel reveal">
+            <p class="eyebrow">Layout</p>
+            <div class="grid-2">
+                <div>
+                    <h3>Flex + Grid essentials</h3>
+                    <ul>
+                        <li>Use Flexbox for one-dimensional layouts.</li>
+                        <li>Use Grid for two-dimensional structure.</li>
+                        <li>Combine both for responsive dashboards.</li>
+                    </ul>
+                </div>
+                <div>
+                    <pre>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
 }
-                </code>
+
+.stack {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+                    </pre>
+                </div>
             </div>
         </section>
 
-        <section>
-            <h2>Why Learn CSS?</h2>
-            <ul>
-                <li><strong>Design Control:</strong> Create beautiful, professional-looking websites</li>
-                <li><strong>Responsive Design:</strong> Make websites work on all devices and screen sizes</li>
-                <li><strong>User Experience:</strong> Improve readability and navigation</li>
-                <li><strong>Separation of Concerns:</strong> Keep structure (HTML) separate from presentation (CSS)</li>
-                <li><strong>Reusability:</strong> One CSS file can style multiple HTML pages</li>
-                <li><strong>Career Essential:</strong> CSS is a fundamental skill for web developers and designers</li>
-            </ul>
+        <section class="panel reveal">
+            <p class="eyebrow">Responsive</p>
+            <h3>Design for the smallest screens first</h3>
+            <div class="grid-2">
+                <div>
+                    <p>Use fluid units and media queries to adapt layouts without rewriting everything.</p>
+                    <ul>
+                        <li>Prefer <code>rem</code> and <code>%</code> for scalable sizing.</li>
+                        <li>Set max widths to keep content readable.</li>
+                        <li>Use <code>min()</code> and <code>clamp()</code> for responsive text.</li>
+                    </ul>
+                </div>
+                <div>
+                    <pre>
+h1 {
+  font-size: clamp(2rem, 2vw + 1.5rem, 3.5rem);
+}
+
+@media (min-width: 900px) {
+  .layout { grid-template-columns: 2fr 1fr; }
+}
+                    </pre>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>Get Started</h2>
-            <p>Ready to style your web pages? Start by creating a CSS file and linking it to your HTML. Experiment with different properties and see how they change your page's appearance!</p>
-            <p><a href="https://youtu.be/n4R2E7O-Ngo?si=FpPlogoYcA-b7CBa" target="_blank" class="button">Start Learning CSS</a></p>
+        <section class="panel reveal">
+            <p class="eyebrow">Polish</p>
+            <h3>Depth, motion, and micro contrast</h3>
+            <div class="grid-2">
+                <div class="callout">
+                    <h4>Motion guidelines</h4>
+                    <ul>
+                        <li>Use transitions for feedback, not decoration.</li>
+                        <li>Animate only transform + opacity when possible.</li>
+                        <li>Keep durations under 300ms for UI feedback.</li>
+                    </ul>
+                </div>
+                <div>
+                    <pre>
+.card {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.12);
+}
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel reveal">
+            <p class="eyebrow">Next Step</p>
+            <h3>CSS pro checklist</h3>
+            <ul>
+                <li>Design tokens defined for color, spacing, and typography.</li>
+                <li>Layouts use Flex/Grid with consistent gaps.</li>
+                <li>Components have hover and focus states.</li>
+                <li>Responsive behavior tested on small screens.</li>
+            </ul>
+            <p style="margin-top: 1rem;"><a class="btn" href="JS.html">Add interaction with JS</a></p>
         </section>
     </main>
 
+    <button class="to-top" aria-label="Scroll to top">↑</button>
     <footer>
-        <p>&copy; 2024 Web Development Tutorial. All rights reserved.</p>
+        <p>Built by Hamza Kharmouch &amp; Hamza Loukrai • <span data-year></span></p>
     </footer>
 </body>
 </html>
