@@ -3,456 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to JavaScript</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #e07245;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            border-bottom: 2px solid #ffd700;
-            padding: 1rem 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav {
-            background-color: #444;
-            padding: 0.5rem;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 1rem;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            color: #ffd700;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        section {
-            background-color: #58bce4;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 5px;
-            box-shadow: 4px 10px 10px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            font-size: 16px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        thead tr {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #ffffff;
-            text-align: left;
-            font-weight: bold;
-        }
-
-        th,
-        td {
-            padding: 15px 20px;
-        }
-
-        tbody tr {
-            border-bottom: 1px solid #dddddd;
-            transition: all 0.3s ease;
-        }
-
-        tbody tr:nth-of-type(even) {
-            background-color: #58bce4;
-        }
-
-        tbody tr:last-of-type {
-            border-bottom: 2px solid #58bce4;
-        }
-
-        tbody tr:hover {
-            background-color: #e8eaf6;
-            transform: scale(1.01);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        tbody tr:active {
-            transform: scale(0.99);
-        }
-
-        a {
-            color: #667eea;
-            text-decoration: none;
-            position: relative;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            transition: width 0.3s ease;
-        }
-
-        a:hover::after {
-            width: 100%;
-        }
-
-        a:hover {
-            color: #764ba2;
-        }
-
-        a:active {
-            color: #5a67d8;
-            transform: translateY(1px);
-        }
-
-        a:visited {
-            color: #9f7aea;
-        }
-
-        a.button {
-            display: inline-block;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 6px;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        a.button::after {
-            display: none;
-        }
-
-        a.button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-            color: white;
-        }
-
-        .code-example {
-            background-color: #f4f4f4;
-            border-left: 4px solid #667eea;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-
-        .code-example code {
-            font-family: 'Courier New', monospace;
-            color: #333;
-        }
-
-        h2 {
-            color: #333;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #ffd700;
-            padding-bottom: 0.5rem;
-        }
-
-        h3 {
-            color: #444;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        ul {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        .demo-box {
-            background-color: #fff;
-            border: 2px solid #667eea;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 4px;
-            text-align: center;
-        }
-    </style>
+    <title>JavaScript Essentials</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Introduction to JavaScript</h1>
+    <div class="progress" id="progress"></div>
+    <header class="site-header">
+        <div class="wrap">
+            <div class="brand">
+                <div class="logo">WM</div>
+                <div class="brand-text">
+                    <p>JavaScript</p>
+                    <div class="title">Interactive UI</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="HTML.html">HTML</a>
+                <a href="Css.html">CSS</a>
+                <a href="JS.html">JavaScript</a>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="HTML.html">HTML</a>
-        <a href="Css.html">CSS</a>
-        <a href="JS.html">JavaScript</a>
-    </nav>
-
     <main>
-        <section>
-            <h2>What is JavaScript?</h2>
-            <p>JavaScript is a powerful programming language that adds interactivity and dynamic behavior to websites. While HTML provides structure and CSS handles styling, JavaScript brings your web pages to life.</p>
-            <p>JavaScript can update content dynamically, respond to user actions, validate forms, create animations, and communicate with servers without reloading the page.</p>
-        </section>
+        <section class="hero panel reveal">
+            <div>
+                <p class="eyebrow">JavaScript Essentials</p>
+                <h1>Bring logic, motion, and feedback to your UI.</h1>
+                <p>Modern JavaScript connects your HTML and CSS with real-time behavior. Learn the patterns that power interactive apps.</p>
+                <div style="margin-top: 1.4rem;">
+                    <a class="btn" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN JavaScript Reference</a>
+                </div>
+            </div>
+            <div>
+                <h3>Modern Syntax Snapshot</h3>
+                <pre>
+const greeting = (name) => `Hello, ${name}`;
+const skills = ["HTML", "CSS", "JS"];
 
-        <section>
-            <h2>How to Add JavaScript</h2>
-            <p>There are three ways to add JavaScript to your HTML:</p>
-            
-            <h3>1. Inline JavaScript</h3>
-            <div class="code-example">
-                <code>&lt;button onclick="alert('Hello!')"&gt;Click Me&lt;/button&gt;</code>
-            </div>
-            
-            <h3>2. Internal JavaScript</h3>
-            <div class="code-example">
-                <code>
-&lt;script&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;function greet() {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('Hello World!');<br>
-&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-&lt;/script&gt;
-                </code>
-            </div>
-            
-            <h3>3. External JavaScript (Recommended)</h3>
-            <div class="code-example">
-                <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code>
+const user = { name: "Hamza", role: "Developer" };
+                </pre>
             </div>
         </section>
 
-        <section>
-            <h2>JavaScript Basics</h2>
-            
-            <h3>Variables</h3>
-            <p>Variables store data values:</p>
-            <div class="code-example">
-                <code>
-let name = "John";<br>
-const age = 25;<br>
-var city = "New York";
-                </code>
-            </div>
-            
-            <h3>Data Types</h3>
-            <div class="code-example">
-                <code>
-let text = "Hello";        // String<br>
-let number = 42;           // Number<br>
-let isTrue = true;         // Boolean<br>
-let fruits = ["apple"];    // Array<br>
-let person = {name: "Bob"}; // Object
-                </code>
-            </div>
-            
-            <h3>Functions</h3>
-            <div class="code-example">
-                <code>
-function add(a, b) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;return a + b;<br>
-}<br>
-<br>
-let result = add(5, 3); // result is 8
-                </code>
+        <section class="panel reveal">
+            <p class="eyebrow">DOM Patterns</p>
+            <div class="grid-2">
+                <div>
+                    <h3>Select, update, and animate</h3>
+                    <ul>
+                        <li>Use <code>querySelector</code> for flexible targeting.</li>
+                        <li>Keep updates small and predictable.</li>
+                        <li>Add or remove classes to trigger CSS states.</li>
+                    </ul>
+                </div>
+                <div>
+                    <pre>
+const card = document.querySelector(".card");
+card.classList.add("is-active");
+card.textContent = "Updated content";
+                    </pre>
+                </div>
             </div>
         </section>
 
-        <section>
-            <h2>Common JavaScript Operations</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Operation</th>
-                        <th>Description</th>
-                        <th>Example</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Select Element</td>
-                        <td>Get HTML element</td>
-                        <td>document.getElementById("myId")</td>
-                    </tr>
-                    <tr>
-                        <td>Change Content</td>
-                        <td>Modify HTML content</td>
-                        <td>element.innerHTML = "New text"</td>
-                    </tr>
-                    <tr>
-                        <td>Change Style</td>
-                        <td>Modify CSS properties</td>
-                        <td>element.style.color = "red"</td>
-                    </tr>
-                    <tr>
-                        <td>Add Event</td>
-                        <td>Respond to user actions</td>
-                        <td>button.addEventListener("click", fn)</td>
-                    </tr>
-                    <tr>
-                        <td>Show Alert</td>
-                        <td>Display popup message</td>
-                        <td>alert("Hello!")</td>
-                    </tr>
-                    <tr>
-                        <td>Console Log</td>
-                        <td>Print to console</td>
-                        <td>console.log("Debug info")</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section>
-            <h2>Control Structures</h2>
-            
-            <h3>Conditional Statements</h3>
-            <div class="code-example">
-                <code>
-if (age >= 18) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;console.log("Adult");<br>
-} else {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;console.log("Minor");<br>
-}
-                </code>
-            </div>
-            
-            <h3>Loops</h3>
-            <div class="code-example">
-                <code>
-// For loop<br>
-for (let i = 0; i < 5; i++) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;console.log(i);<br>
-}<br>
-<br>
-// While loop<br>
-while (count < 10) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;count++;<br>
-}
-                </code>
-            </div>
-        </section>
-
-        <section>
-            <h2>DOM Manipulation</h2>
-            <p>The Document Object Model (DOM) allows JavaScript to interact with HTML elements:</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Method</th>
-                        <th>Description</th>
-                        <th>Example</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>getElementById()</td>
-                        <td>Select by ID</td>
-                        <td>document.getElementById("demo")</td>
-                    </tr>
-                    <tr>
-                        <td>querySelector()</td>
-                        <td>Select by CSS selector</td>
-                        <td>document.querySelector(".class")</td>
-                    </tr>
-                    <tr>
-                        <td>createElement()</td>
-                        <td>Create new element</td>
-                        <td>document.createElement("div")</td>
-                    </tr>
-                    <tr>
-                        <td>appendChild()</td>
-                        <td>Add child element</td>
-                        <td>parent.appendChild(child)</td>
-                    </tr>
-                    <tr>
-                        <td>remove()</td>
-                        <td>Remove element</td>
-                        <td>element.remove()</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section>
-            <h2>Events</h2>
-            <p>JavaScript can respond to user interactions:</p>
-            <ul>
-                <li><strong>click:</strong> When an element is clicked</li>
-                <li><strong>mouseover:</strong> When mouse hovers over element</li>
-                <li><strong>keypress:</strong> When a key is pressed</li>
-                <li><strong>submit:</strong> When a form is submitted</li>
-                <li><strong>load:</strong> When page finishes loading</li>
-            </ul>
-            <div class="code-example">
-                <code>
-button.addEventListener('click', function() {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;alert('Button clicked!');<br>
+        <section class="panel reveal">
+            <p class="eyebrow">Events</p>
+            <h3>Turn user intent into action</h3>
+            <pre>
+const button = document.querySelector(".btn");
+button.addEventListener("click", () => {
+  button.textContent = "Saved!";
 });
-                </code>
+            </pre>
+        </section>
+
+        <section class="panel reveal">
+            <p class="eyebrow">Async</p>
+            <div class="grid-2">
+                <div>
+                    <h3>Handle async work with clarity</h3>
+                    <p>Async flows keep apps responsive. Use <code>async/await</code> to read like synchronous code.</p>
+                </div>
+                <div>
+                    <pre>
+async function getData() {
+  const response = await fetch("/data.json");
+  const data = await response.json();
+  return data;
+}
+                    </pre>
+                </div>
             </div>
         </section>
 
-        <section>
-            <h2>Why Learn JavaScript?</h2>
+        <section class="panel reveal">
+            <p class="eyebrow">Debugging</p>
+            <h3>Make the console your co-pilot</h3>
             <ul>
-                <li><strong>Interactivity:</strong> Create dynamic, responsive user interfaces</li>
-                <li><strong>Versatility:</strong> Use for frontend, backend (Node.js), mobile apps, and more</li>
-                <li><strong>In-Demand Skill:</strong> One of the most popular programming languages</li>
-                <li><strong>Large Ecosystem:</strong> Thousands of libraries and frameworks available</li>
-                <li><strong>Browser Native:</strong> Runs in every web browser without installation</li>
-                <li><strong>Community:</strong> Massive community with extensive resources and support</li>
+                <li>Use <code>console.table</code> for arrays and objects.</li>
+                <li>Group related logs with <code>console.group</code>.</li>
+                <li>Handle errors with <code>try/catch</code> and clear messages.</li>
             </ul>
         </section>
 
-        <section>
-            <h2>Get Started</h2>
-            <p>Ready to make your websites interactive? Open your browser's developer console (F12) and start experimenting with JavaScript today. Try creating buttons that respond to clicks, forms that validate input, or animations that bring your page to life!</p>
-            <p><a href="https://youtu.be/EfAl9bwzVZk?si=gCcteDoYpByH-aoy" target="_blank"class="button">Start Learning JavaScript</a></p>
+        <section class="panel reveal">
+            <p class="eyebrow">Next Step</p>
+            <h3>JavaScript pro checklist</h3>
+            <ul>
+                <li>Event listeners are scoped and cleaned up when needed.</li>
+                <li>DOM updates happen with class toggles, not inline style.</li>
+                <li>Async calls handle errors gracefully.</li>
+                <li>Console logs are removed before shipping.</li>
+            </ul>
+            <p style="margin-top: 1rem;"><a class="btn" href="index.html">Back to home</a></p>
         </section>
     </main>
 
+    <button class="to-top" aria-label="Scroll to top">↑</button>
     <footer>
-        <p>&copy; 2024 Web Development Tutorial. All rights reserved.</p>
+        <p>Built by Hamza Kharmouch &amp; Hamza Loukrai • <span data-year></span></p>
     </footer>
 </body>
 </html>
