@@ -17,9 +17,6 @@ This folder contains a small, professional learning site for HTML, CSS, and Java
 - `js/` - Stores the main script (`script.js`).
 - `.dist/` - Build or distribution folder (kept as-is).
 
-## Screenshots
-![Home page](https://github.com/user-attachments/assets/0258612d-694b-4016-bae9-7ecc544b00f1)
-![Guide page](https://github.com/user-attachments/assets/de087963-de41-48e8-a155-83fc970c9ac0)
 
 ## How to run
 Open `index.html` in your browser.
