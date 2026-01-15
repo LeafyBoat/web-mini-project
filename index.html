@@ -3,49 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Web Mini Project</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="script" href="js/script.js">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <header id="head1">
-        Welcome to the home page!
+    <div class="progress" id="progress"></div>
+    <header class="site-header">
+        <div class="wrap">
+            <div class="brand">
+                <div class="logo">WM</div>
+                <div class="brand-text">
+                    <p>Web Mini Project</p>
+                    <div class="title">Frontend Foundations</div>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="HTML.html">HTML</a>
+                <a href="Css.html">CSS</a>
+                <a href="JS.html">JavaScript</a>
+            </nav>
+        </div>
     </header>
-    <hr>
+
     <main>
-        <section>
-            <h1>Getting Started</h1>
-            <p>Welcome! This is a simple web page to help you get started with HTML.</p>
+        <section class="hero panel reveal">
+            <div>
+                <p class="eyebrow">Start Here</p>
+                <h1>Build sharp, modern web pages from scratch.</h1>
+                <p>Use this project as a focused launchpad for semantic HTML, expressive CSS, and practical JavaScript. Each section gives you pro-level notes, patterns, and mini examples you can reuse immediately.</p>
+                <div class="pill-list">
+                    <span class="pill">Semantic Structure</span>
+                    <span class="pill">Layout Systems</span>
+                    <span class="pill">Interactive UI</span>
+                </div>
+                <div style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                    <a class="btn" href="HTML.html">Start with HTML</a>
+                    <a class="btn secondary" href="Css.html">Jump to CSS</a>
+                </div>
+            </div>
+            <div class="card">
+                <span>Project Flow</span>
+                <h3>Learn → Build → Polish</h3>
+                <p>Use the pages like a guided workshop. Each section ends with a quick action so you move from reading to shipping.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <h4>3</h4>
+                        <p>Core modules</p>
+                    </div>
+                    <div class="stat">
+                        <h4>12+</h4>
+                        <p>Pro tips</p>
+                    </div>
+                    <div class="stat">
+                        <h4>1</h4>
+                        <p>Capstone page</p>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section>
-            <h2>Notes</h2>
-            <table border="1">
+
+        <section class="panel reveal">
+            <p class="eyebrow">Learning Path</p>
+            <h3>Choose your focus today</h3>
+            <div class="cards" style="margin-top: 1.5rem;">
+                <div class="card">
+                    <span>HTML</span>
+                    <h4>Structure with intent</h4>
+                    <p>Master semantic tags, forms, accessibility, and metadata that search engines understand.</p>
+                    <a href="HTML.html">Explore HTML</a>
+                </div>
+                <div class="card">
+                    <span>CSS</span>
+                    <h4>Design with systems</h4>
+                    <p>Create layouts that scale across devices using grids, tokens, and responsive rules.</p>
+                    <a href="Css.html">Explore CSS</a>
+                </div>
+                <div class="card">
+                    <span>JavaScript</span>
+                    <h4>Bring pages alive</h4>
+                    <p>Learn DOM patterns, events, and async workflows that power modern UI.</p>
+                    <a href="JS.html">Explore JavaScript</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel reveal">
+            <p class="eyebrow">Quick Toolkit</p>
+            <div class="grid-2">
+                <div>
+                    <h3>Daily build ritual</h3>
+                    <ol>
+                        <li>Sketch the structure in HTML first.</li>
+                        <li>Define design tokens (colors, spacing, type).</li>
+                        <li>Layer layout + component styling.</li>
+                        <li>Add small interactive details with JS.</li>
+                        <li>Run through accessibility checks.</li>
+                    </ol>
+                </div>
+                <div class="callout">
+                    <h3>Mini challenge</h3>
+                    <p>Create a landing page with one hero, one feature grid, and one call-to-action. Use the styles you learn here and add a simple JS interaction (scroll progress or reveal).</p>
+                    <p style="margin-top: 1rem;"><a class="btn secondary" href="JS.html">See JS ideas</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel reveal">
+            <p class="eyebrow">Resources</p>
+            <h3>Practice with curated courses</h3>
+            <table>
                 <thead>
                     <tr>
                         <th>Topic</th>
-                        <th>Description</th>
-                        <th>Course</th>
+                        <th>What you learn</th>
+                        <th>Link</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="Html.html">Html Basics</a></td>
-                        <td>Learn the fundamentals of HTML</td>
-                        <td><a href="https://youtu.be/mJgBOIoGihA?si=uX7FrXoLunT4tpoM" target="_blank">HTMl course</a></td>
+                        <td>HTML Basics</td>
+                        <td>Structure, semantics, tags, and best practices</td>
+                        <td><a href="https://youtu.be/mJgBOIoGihA?si=uX7FrXoLunT4tpoM" target="_blank">HTML course</a></td>
                     </tr>
                     <tr>
-                        <td><a href="Css.html">CSS Styling</a></td>
-                        <td>Style your web pages with CSS</td>
+                        <td>CSS Styling</td>
+                        <td>Layout, typography, and responsive design</td>
                         <td><a href="https://youtu.be/n4R2E7O-Ngo?si=FpPlogoYcA-b7CBa" target="_blank">CSS course</a></td>
                     </tr>
                     <tr>
-                        <td><a href="JS.html">JavaScript</a></td>
-                        <td>Add interactivity with JavaScript</td>
-                        <td><a href="https://youtu.be/EfAl9bwzVZk?si=gCcteDoYpByH-aoy" target="_blank">JavaScript Course</a></td>
+                        <td>JavaScript</td>
+                        <td>Logic, events, and browser APIs</td>
+                        <td><a href="https://youtu.be/EfAl9bwzVZk?si=gCcteDoYpByH-aoy" target="_blank">JavaScript course</a></td>
                     </tr>
                 </tbody>
             </table>
         </section>
     </main>
+
+    <button class="to-top" aria-label="Scroll to top">↑</button>
+    <footer>
+        <p>Built by Hamza Kharmouch &amp; Hamza Loukrai • <span data-year></span></p>
+    </footer>
 </body>
 </html>
