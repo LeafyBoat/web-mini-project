@@ -1,17 +1,21 @@
-﻿# Web Mini Project
+# Web Mini Project
 
-A compact learning hub for HTML, CSS, and JavaScript foundations with a cohesive visual system and small UI interactions.
+This folder contains a small, professional learning site for HTML, CSS, and JavaScript. Each page teaches a topic with short notes and examples, and the styling + JavaScript are shared across the site to keep everything consistent.
 
-## Pages
-- `index.html` - home overview and learning path
-- `HTML.html` - semantic HTML guidance
-- `Css.html` - CSS systems and layout patterns
-- `JS.html` - JavaScript essentials and patterns
+## Main pages
+- `index.html` - Home page and overview. It links to the three learning pages, shows the learning path, and includes the resources table.
+- `HTML.html` - HTML guide. Focuses on semantic structure, forms, accessibility, and metadata.
+- `Css.html` - CSS guide. Covers design tokens, layout (Flex/Grid), responsive tips, and polish.
+- `JS.html` - JavaScript guide. Covers DOM patterns, events, async basics, and debugging.
 
-## Features
-- Shared design system in `css/style.css`
-- Scroll progress indicator, reveal animations, and back-to-top button
-- Active navigation highlight + auto-updating footer year
+## Shared assets
+- `css/style.css` - The design system and layout styles for all pages. Includes typography, cards, tables, buttons, and reveal animation styles.
+- `js/script.js` - Shared behavior: scroll progress bar, reveal-on-scroll animations, active nav highlight, back-to-top button, and auto-updating footer year.
+
+## Folders
+- `css/` - Stores the main stylesheet (`style.css`).
+- `js/` - Stores the main script (`script.js`).
+- `.dist/` - Build or distribution folder (kept as-is).
 
 ## How to run
 Open `index.html` in your browser.
