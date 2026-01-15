@@ -1,36 +1,66 @@
-// DOM Elements
-const form = document.querySelector('form');
-const input = document.querySelector('input');
-const button = document.querySelector('button');
-const list = document.querySelector('ul');
+const navLinks = document.querySelectorAll(".nav-links a");
+const progress = document.getElementById("progress");
+const toTopButton = document.querySelector(".to-top");
+const revealItems = document.querySelectorAll(".reveal");
+const yearLabel = document.querySelector("[data-year]");
 
-// Event Listeners
-if (button) {
-    button.addEventListener('click', handleSubmit);
-}
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (href === currentPage) {
+        link.classList.add("active");
+    }
+});
 
-if (form) {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        handleSubmit();
+const updateProgress = () => {
+    if (!progress) {
+        return;
+    }
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    const total = scrollHeight - clientHeight;
+    const percent = total > 0 ? (scrollTop / total) * 100 : 0;
+    progress.style.width = `${percent}%`;
+};
+
+const toggleToTop = () => {
+    if (!toTopButton) {
+        return;
+    }
+    toTopButton.classList.toggle("show", window.scrollY > 420);
+};
+
+const onScroll = () => {
+    updateProgress();
+    toggleToTop();
+};
+
+window.addEventListener("scroll", onScroll);
+window.addEventListener("load", onScroll);
+
+if (toTopButton) {
+    toTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
 }
 
-// Functions
-function handleSubmit() {
-    const value = input.value.trim();
-    
-    if (value === '') {
-        alert('Please enter something');
-        return;
-    }
-    }
-    
-    console.log('Submitted:', value);
-    input.value = '';
+if (yearLabel) {
+    yearLabel.textContent = new Date().getFullYear();
+}
 
-console.log("System initialized");
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Page loaded');
-});
+if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.15 }
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+} else {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+}
